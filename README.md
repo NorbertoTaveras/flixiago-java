@@ -5,6 +5,7 @@
     <a href=""><img alt="Platform" src="https://img.shields.io/badge/platform-Android-green.svg?style=flat"/></a>
     <a href=""><img alt="Build-Status" src="https://shields.io/badge/build-passing-brightgreen?style=flat&logo=github"/></a>
     <a href="https://github.com/NorbertoTaveras"><img alt="Github-Profile" src="https://img.shields.io/badge/Github-NorbertoTaveras-blue?style=flat&logo=github"/></a>
+    <a href="https://twitter.com/TaverasN"><img alt="Twitter-Profile" src="https://img.shields.io/badge/Twitter-TaverasN-purple?style=flat&logo=twitter"/></a>
 </p>
 
 <p align="center">
