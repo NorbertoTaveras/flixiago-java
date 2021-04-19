@@ -34,7 +34,7 @@ Go to the [Releases](https://github.com/NorbertoTaveras/flixiago/releases) to do
 
 ## API
 
-<img src="https://raw.githubusercontent.com/NorbertoTaveras/flixiago/0e03821ff0ed2bfab9c278fbdabb3e51f7659c60/tmdb_primary_logo.svg?token=AGCJ6ALOXML2X2SPQ5YCLKDAPTKUC" align="center" width="21%"/>
+<img src="https://raw.githubusercontent.com/NorbertoTaveras/flixiago/0e03821ff0ed2bfab9c278fbdabb3e51f7659c60/tmdb_primary_logo.svg?token=AGCJ6ALOXML2X2SPQ5YCLKDAPTKUC" align="right" width="21%"/>
 
 Flixiago uses the [Movie Database API](https://www.themoviedb.org/documentation/api) for constructing the RESTful API.</br>
 The Movie Database API provides a RESTful API interface to highly detailed objects built from thousands collections of movies/tv-shows.
