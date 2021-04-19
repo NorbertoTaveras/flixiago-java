@@ -38,3 +38,9 @@ Go to the [Releases](https://github.com/NorbertoTaveras/flixiago/releases) to do
 
 Flixiago uses the [Movie Database API](https://www.themoviedb.org/documentation/api) for constructing the RESTful API.<br>
 The Movie Database API provides a RESTful API interface to highly detailed objects built from thousands collections of movies/tv-shows.
+
+## Demonstration
+
+### Videos
+
+### Screenshots
