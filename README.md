@@ -12,3 +12,24 @@
   Also utilizing the best practices, libraries and tools.
 </p>
 </br>
+
+<p align="center">
+    Flixiago Logo Goes here (TODO)
+</p>
+
+## Download
+Go to the [Releases](https://github.com/NorbertoTaveras/flixiago/releases) to download the latest APK.
+
+## Tech Stack & Open-Source Libraries
+- Mininum SDK Level 21
+- Java
+- Jetpack
+    - Room Persistence -  construct a database using the abstract layer.
+- Architecture
+    - MVC Architecture (Model - View - Controller)
+    - Repository Pattern
+- [Retrofit](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
+- [Glide](https://github.com/bumptech/glide) - download/load images.
+- [Material-Components](https://github.com/material-components/material-components-android) - material design componets, such as cardview, etc.
+
+## API
