@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_search_24"
+        android:title="Search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!--<item
+        android:id="@+id/show_sort"
+        android:enabled="true"
+        android:icon="@drawable/baseline_sort_white_24dp"
+        android:title="Sort"
+        app:showAsAction="always"/> -->
+
+    <item
+        android:id="@+id/genre_filter"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_filter_list_24"
+        android:title="Genre"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/certification_filter"
+        android:enabled="true"
+        android:icon="@drawable/ic_round_shield_24"
+        android:title="Certification"
+        app:showAsAction="ifRoom"/>
+
+</menu>

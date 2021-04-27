@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name ="white_36">#5CFFFFFF</color>
+    <color name ="white_50">#80FFFFFF</color>
+    <color name="white_90">#E6FFFFFF</color>
+
+    <color name="flixiago_primary">#4E328E</color>
+    <color name="flixiago_primary_dark">#1B0960</color>
+    <color name="flixiago_primary_light">#7E5DBF</color>
+    <color name="flixiago_secondary">#E8C546</color>
+    <color name="flixiago_secondary_dark">#b29508</color>
+    <color name="flixiago_secondary_light">#FFf877</color>
+    <color name="flixiago_gray">#696969</color>
+
+    <color name="dividerColor">#1fffffff</color>
+</resources>

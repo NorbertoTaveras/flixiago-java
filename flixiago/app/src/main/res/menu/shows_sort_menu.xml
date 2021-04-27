@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/popular"
+        android:enabled="true"
+        android:title="Popular"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/top_rated"
+        android:enabled="true"
+        android:title="Top Rated"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/on_the_air"
+        android:enabled="true"
+        android:title="On The Air"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/airing_today"
+        android:enabled="true"
+        android:title="Airing Today"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/show_latest"
+        android:enabled="true"
+        android:title="Latest"
+        app:showAsAction="never"/>
+</menu>

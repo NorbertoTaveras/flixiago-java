@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Flixiago</string>
+    <string name="title_activity_content_activity">content_activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Watchlist</string>
+    <string name="password_too_short">Password is too short</string>
+    <string name="password_required">Password is required</string>
+    <string name="passwords_must_match">Passwords must match</string>
+    <string name="required">Required</string>
+    <string name="too_short">Too short</string>
+    <string name="display_name_required">Display name is required</string>
+    <string name="authentication_failed">Authentication failed, unknown error</string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="password_too_weak">password is too weak, use a longer password</string>
+    <string name="email_already_exists">An account with that email already exists</string>
+    <string name="invalid_credentials">Invalid email or password</string>
+    <string name="recovery_email_sent">Recovery email sent, check your email to recover your account</string>
+    <string name="ru_sure_sign_out">Are you sure you want to sign out?</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_shows">Shows</string>
+    <string name="title_watchlist">Watchlist</string>
+    <string name="release_date">November 16, 2016</string>
+    <string name="movie_title">Fantastics Beasts And Where To Find Them</string>
+    <string name="movie_genres">Adventure, Family, Fantasy</string>
+    <string name="movie_rating">7.4</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_btn_title">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="flixiago_title">Flixiago</string>
+    <string name="sign_up_btn_title">Sign Up</string>
+    <string name="skip_btn_title">Skip</string>
+    <string name="display_name_hint">Display Name</string>
+    <string name="confirm_password_hint">Re-type Password</string>
+    <string name="movies_popular">Movies • Popular</string>
+    <string name="movies_top_rated">Movies • Top Rated </string>
+    <string name="movies_upcoming">Movies • Upcoming</string>
+    <string name="movies_now_playing">Movies • Now Playing</string>
+    <string name="movies_latest">Movies • Latest</string>
+    <string name="search">Search</string>
+    <string name="release_date_missing">Release date unknown</string>
+    <string name="genres_unknown">Genres not available</string>
+    <string name="get_movie_error">Error getting movie from server</string>
+    <string name="get_trailers_error">Failed to get trailer info from server</string>
+    <string name="get_credits_error">Unable to get movie credits from server</string>
+    <string name="get_person_error">Error getting movie person object</string>
+    <string name="shows_popular">TV Shows • Popular</string>
+    <string name="shows_top_rated">TV Shows • Top Rated </string>
+    <string name="shows_on_the_air">TV Shows • On The Air</string>
+    <string name="shows_airing_today">TV Shows • Airing Today</string>
+    <string name="shows_latest">TV Shows • Latest</string>
+    <string name="add_watch">Add to Watch List</string>
+    <string name="remove_watch">Remove from Watch List</string>
+    <string name="season">season</string>
+    <string name="completed">Completed</string>
+    <string name="watch_list_header">Watchlist</string>
+    <string name="certification">PG</string>
+    <string name="save_account_changes">Save Account Changes</string>
+    <string name="image_source">Image Source</string>
+    <string name="library">Library</string>
+    <string name="camera">Camera</string>
+    <string name="load_failed">Failed to load</string>
+    <string name="movies_title_default">Movies</string>
+    <string name="shows_title_default">TV Shows</string>
+    <string name="title_settings">Settings</string>
+    <string-array name="watch_list_filter">
+        <item>All</item>
+        <item>Movies</item>
+        <item>TV Shows</item>
+    </string-array>
+
+</resources>

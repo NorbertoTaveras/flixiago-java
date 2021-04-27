@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Flixiago" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorTitleTextOnPrimary">@color/white_90</item>
+        <item name="colorContentTextOnPrimary">@color/white_50</item>
+        <item name="colorTextHighlight">@color/flixiago_primary_light</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/flixiago_secondary</item>
+        <item name="colorSecondaryVariant">@color/flixiago_secondary_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

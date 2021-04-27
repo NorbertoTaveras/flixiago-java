@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    style="@style/Widget.MaterialComponents.CardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:layout_width="96dp"
+            android:layout_height="132dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/poster"
+            app:layout_constraintTop_toTopOf="@id/poster">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/movie_title"
+                android:textColor="?attr/colorTitleTextOnPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/certification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/certification"
+                android:textColor="?attr/colorContentTextOnPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/genres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/movie_genres"
+                android:textColor="?attr/colorContentTextOnPrimary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/release_date"
+                android:textColor="?attr/colorContentTextOnPrimary"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <at.grabner.circleprogress.CircleProgressView
+                    android:id="@+id/rating_circle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    app:cpv_barColor="@color/flixiago_secondary"
+                    app:cpv_barWidth="5dp"
+                    app:cpv_fillColor="@color/flixiago_primary_dark"
+                    app:cpv_rimColor="@color/flixiago_primary"
+                    app:cpv_rimWidth="6dp"
+                    app:cpv_showUnit="true"
+                    app:cpv_textColor="#FFFFFF"
+                    app:cpv_textMode="Percent"
+                    app:cpv_textSize="10dp"
+                    app:cpv_unit="%"
+                    app:cpv_unitColor="#FFFFFF"
+                    app:cpv_unitPosition="right_top"
+                    app:cpv_unitSize="10dp" />
+
+                <!--<ImageButton
+                    android:id="@+id/favorite"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:tint="@color/flixiago_primary"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_round_favorite_24"/>-->
+
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_round_favorite_24"
+                    app:tint="@color/flixiago_primary" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

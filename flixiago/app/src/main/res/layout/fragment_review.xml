@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:layout_marginTop="12dp">
+
+    <TextView
+        android:id="@+id/movie_review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/movie_review_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="1dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/read_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read more"
+        android:textColor="?attr/colorTextHighlight"/>
+
+    <TextView
+        android:id="@+id/read_less"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read less"
+        android:textColor="?attr/colorTextHighlight"/>
+
+</LinearLayout>

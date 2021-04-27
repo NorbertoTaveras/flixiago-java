@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_movies">
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.norbertotaveras.flixiago.ui.movies.MoviesFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_movies" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.norbertotaveras.flixiago.ui.shows.ShowsFragment"
+        android:label="@string/title_shows"
+        tools:layout="@layout/fragment_shows" />
+
+    <fragment
+        android:id="@+id/navigation_watchlist"
+        android:name="com.norbertotaveras.flixiago.ui.watchlist.WatchlistFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.norbertotaveras.flixiago.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings"/>
+</navigation>

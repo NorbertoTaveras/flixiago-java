@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_marginTop="16dp"
+            android:layout_width="152dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:layout_margin="16dp"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:text="Known For" />
+
+        <TextView
+            android:id="@+id/known_for"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorContentTextOnPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="Text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:text="Birthdate" />
+
+        <TextView
+            android:id="@+id/birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorContentTextOnPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="Text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_light"
+            android:text="Birthplace" />
+
+        <TextView
+            android:id="@+id/birthplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorContentTextOnPrimary"
+            android:fontFamily="@font/roboto_light"
+            android:text="Text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:text="Bio" />
+
+        <TextView
+            android:id="@+id/bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="?attr/colorContentTextOnPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="Text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Pictures"
+            android:layout_gravity="center_horizontal"/>
+
+        <HorizontalScrollView
+            android:id="@+id/pictures_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+            <LinearLayout
+                android:id="@+id/pictures_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"/>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_light"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="?attr/colorTitleTextOnPrimary"
+            android:text="Known For"
+            android:layout_gravity="center_horizontal"/>
+
+        <HorizontalScrollView
+            android:id="@+id/known_for_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+            <LinearLayout
+                android:id="@+id/known_for_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"/>
+        </HorizontalScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
