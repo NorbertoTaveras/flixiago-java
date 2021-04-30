@@ -1,6 +1,7 @@
 package com.norbertotaveras.flixiago.ui.settings;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,9 @@ import com.norbertotaveras.flixiago.R;
 
 public class SettingsFragment
         extends
-        Fragment {
+        Fragment implements View.OnClickListener {
 
+    private View shareView;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +31,24 @@ public class SettingsFragment
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        View view = getView();
+
+        if (view == null)
+            return;
+
+        shareView = view.findViewById(R.id.shareView);
+        shareView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.shareView:
+                Log.d("Debug", "Share View Clicked");
+                break;
+            default:
+                break;
+        }
     }
 }
