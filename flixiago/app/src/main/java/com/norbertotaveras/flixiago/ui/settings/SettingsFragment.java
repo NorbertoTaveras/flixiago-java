@@ -21,7 +21,8 @@ import java.text.Normalizer;
 
 public class SettingsFragment
         extends
-        Fragment implements View.OnClickListener {
+        Fragment
+        implements View.OnClickListener {
 
     private MaterialCardView creatorCard;
     private MaterialCardView featureCard;
