@@ -1,5 +1,7 @@
 package com.norbertotaveras.flixiago.ui.settings;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,13 +12,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.card.MaterialCardView;
 import com.norbertotaveras.flixiago.R;
+import com.norbertotaveras.flixiago.activities.AlternateIconsActivity;
+import com.norbertotaveras.flixiago.helpers.FormHelpers;
+
+import java.text.Normalizer;
 
 public class SettingsFragment
         extends
         Fragment implements View.OnClickListener {
 
-    private View shareView;
+    private MaterialCardView creatorCard;
+    private MaterialCardView featureCard;
+    private MaterialCardView bugCard;
+
+    private Context context;
+
+    public SettingsFragment() {
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,21 +46,33 @@ public class SettingsFragment
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         View view = getView();
 
         if (view == null)
             return;
 
-        shareView = view.findViewById(R.id.shareView);
-        shareView.setOnClickListener(this);
+        context = getContext();
+
+        creatorCard = view.findViewById(R.id.creator_card_view);
+        featureCard = view.findViewById(R.id.feature_card_view);
+        bugCard = view.findViewById(R.id.report_bug_card_view);
+
+        creatorCard.setOnClickListener(this);
+        featureCard.setOnClickListener(this);
+        bugCard.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.shareView:
-                Log.d("Debug", "Share View Clicked");
+            case R.id.feature_card_view:
+                FormHelpers.openFeatureRequestEmail(context);
+                break;
+            case R.id.report_bug_card_view:
+                FormHelpers.openBugReportEmail(context);
+                break;
+            case R.id.creator_card_view:
+                FormHelpers.openCreatorTwitter(context);
                 break;
             default:
                 break;

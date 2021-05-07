@@ -147,6 +147,11 @@ public class FormHelpers {
         }
     }
 
+    public static boolean openCreatorTwitter(Context context) {
+        return FormHelpers.openUrl(context,
+                "https://twitter.com/TaverasN");
+    }
+
     private static boolean openUrl(Context context, String url) {
         Uri uri = Uri.parse(url);
         return FormHelpers.openUri(context, uri);
@@ -156,6 +161,30 @@ public class FormHelpers {
         Intent openBrowserIntent = new Intent(Intent.ACTION_VIEW);
         openBrowserIntent.setData(uri);
         context.startActivity(openBrowserIntent);
+        return true;
+    }
+
+    public static boolean openFeatureRequestEmail(Context context) {
+        return FormHelpers.openEmail(context,
+                new String[]{"test@gmail.com"},
+                "Feature Request! [Flixiago]",
+                "Hello, I have this idea");
+    }
+
+    public static boolean openBugReportEmail(Context context) {
+        return FormHelpers.openEmail(context,
+                new String[]{"test@gmail.com"},
+                "BUG! [Flixiago]",
+                "Oh no, there's a bug!");
+    }
+
+    private static boolean openEmail(Context context, String[] recipient, String subject, String text) {
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_EMAIL, recipient);
+        sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+        sendIntent.setType("text/plain");
+        context.startActivity(Intent.createChooser(sendIntent, "Send email in"));
         return true;
     }
 
