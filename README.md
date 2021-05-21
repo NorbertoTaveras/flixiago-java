@@ -15,7 +15,7 @@
 </br>
 
 <p align="center">
-    Flixiago Logo Goes here (TODO)
+    <img src ="https://github.com/NorbertoTaveras/flixiago-java/blob/main/assets/flixiago_logo.png" width="40%"/>
 </p>
 
 ## Download
@@ -45,3 +45,21 @@ The Movie Database API provides a RESTful API interface to highly detailed objec
 ### Videos
 
 ### Screenshots
+<p>
+    <img src="/assets/screenshot1.png" width="25%"/>
+    <img src="/assets/screenshot2.png" width="25%"/>
+    <img src="/assets/screenshot3.png" width="25%"/>
+</p>
+
+<p>
+    <img src="/assets/screenshot4.png" width="25%"/>
+    <img src="/assets/screenshot5.png" width="25%"/>
+    <img src="/assets/screenshot6.png" width="25%"/>
+</p>
+
+
+<p>
+    <img src="/assets/screenshot7.png" width="25%"/>
+    <img src="/assets/screenshot8.png" width="25%"/>
+    <img src="/assets/screenshot9.png" width="25%"/>
+</p>
