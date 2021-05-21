@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:icon="@drawable/flixiago_logo"
         android:roundIcon="@drawable/flixiago_logo"
-        android:theme="@style/SplashScreenTheme"
+        android:theme="@style/Theme.Flixiago"
         android:usesCleartextTraffic="true">
         <activity android:name=".activities.AlternateIconsActivity" />
         <activity
