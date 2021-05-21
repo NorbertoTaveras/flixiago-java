@@ -74,7 +74,7 @@ public class MovieDBApi {
     public static final String ON_THE_AIR = "on_the_air";
 
     private static MovieDBApi instance;
-    private TMDBService service;
+    private final TMDBService service;
 
     private HashMap<Long, String> cachedMovieGenreLookup;
     private HashMap<Long, String> cachedShowGenreLookup;

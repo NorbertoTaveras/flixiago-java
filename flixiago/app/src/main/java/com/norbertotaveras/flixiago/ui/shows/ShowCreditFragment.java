@@ -123,10 +123,7 @@ public class ShowCreditFragment extends Fragment {
             @Override
             public void onSuccess(long id, ArrayList<PersonImage> images) {
                 final FormHelpers.ThumbnailClickListener clickListener;
-                clickListener = new FormHelpers.ThumbnailClickListener<PersonImage>() {
-                    @Override
-                    public void onClick(PersonImage item) {
-                    }
+                clickListener = (FormHelpers.ThumbnailClickListener<PersonImage>) item -> {
                 };
 
                 FormHelpers.populateScrollingImageList(fragment, picturesLayout,
@@ -171,12 +168,7 @@ public class ShowCreditFragment extends Fragment {
             @Override
             public void onSuccess(PersonCombinedCredits combinedCredits) {
                 FormHelpers.ThumbnailClickListener clickListener =
-                        new FormHelpers.ThumbnailClickListener<MediaCredit>() {
-                    @Override
-                    public void onClick(MediaCredit item) {
-                        item.open(context);
-                    }
-                };
+                        (FormHelpers.ThumbnailClickListener<MediaCredit>) item -> item.open(context);
 
                 FormHelpers.populateScrollingImageList(fragment, knownForLayout,
                         combinedCredits.getCast(), false,

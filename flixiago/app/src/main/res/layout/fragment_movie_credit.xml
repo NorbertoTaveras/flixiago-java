@@ -13,13 +13,14 @@
             android:layout_marginTop="16dp"
             android:layout_width="152dp"
             android:layout_height="152dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/movie_credit_photo" />
 
         <TextView
             android:id="@+id/display_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name"
             android:fontFamily="@font/roboto_bold"
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:layout_margin="16dp"
@@ -36,7 +37,7 @@
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:textStyle="bold"
             android:fontFamily="@font/roboto"
-            android:text="Known For" />
+            android:text="@string/known_for" />
 
         <TextView
             android:id="@+id/known_for"
@@ -48,8 +49,7 @@
             android:layout_marginEnd="16dp"
             android:textSize="14sp"
             android:textColor="?attr/colorContentTextOnPrimary"
-            android:fontFamily="@font/roboto"
-            android:text="Text" />
+            android:fontFamily="@font/roboto"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -62,7 +62,7 @@
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:textStyle="bold"
             android:fontFamily="@font/roboto"
-            android:text="Birthdate" />
+            android:text="@string/birthdate" />
 
         <TextView
             android:id="@+id/birthdate"
@@ -74,8 +74,7 @@
             android:layout_marginEnd="16dp"
             android:textSize="14sp"
             android:textColor="?attr/colorContentTextOnPrimary"
-            android:fontFamily="@font/roboto"
-            android:text="Text" />
+            android:fontFamily="@font/roboto"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -88,7 +87,7 @@
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:textStyle="bold"
             android:fontFamily="@font/roboto_light"
-            android:text="Birthplace" />
+            android:text="@string/birthplace" />
 
         <TextView
             android:id="@+id/birthplace"
@@ -100,8 +99,7 @@
             android:layout_marginEnd="16dp"
             android:textSize="14sp"
             android:textColor="?attr/colorContentTextOnPrimary"
-            android:fontFamily="@font/roboto_light"
-            android:text="Text" />
+            android:fontFamily="@font/roboto_light"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -114,7 +112,7 @@
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:textStyle="bold"
             android:fontFamily="@font/roboto"
-            android:text="Bio" />
+            android:text="@string/bio" />
 
         <TextView
             android:id="@+id/bio"
@@ -126,8 +124,7 @@
             android:layout_marginEnd="16dp"
             android:textSize="14sp"
             android:textColor="?attr/colorContentTextOnPrimary"
-            android:fontFamily="@font/roboto"
-            android:text="Text" />
+            android:fontFamily="@font/roboto"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -139,7 +136,7 @@
             android:textColor="?attr/colorTitleTextOnPrimary"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:text="Pictures"
+            android:text="@string/pictures"
             android:layout_gravity="center_horizontal"/>
 
         <HorizontalScrollView
@@ -166,7 +163,7 @@
             android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="?attr/colorTitleTextOnPrimary"
-            android:text="Known For"
+            android:text="@string/known_for"
             android:layout_gravity="center_horizontal"/>
 
         <HorizontalScrollView

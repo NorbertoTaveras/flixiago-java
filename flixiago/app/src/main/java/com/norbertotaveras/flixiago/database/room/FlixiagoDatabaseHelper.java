@@ -9,12 +9,9 @@
  */
 package com.norbertotaveras.flixiago.database.room;
 
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-
-import androidx.annotation.NonNull;
 import com.norbertotaveras.flixiago.R;
 import com.norbertotaveras.flixiago.helpers.FormHelpers;
 import com.norbertotaveras.flixiago.models.movie.Movie;

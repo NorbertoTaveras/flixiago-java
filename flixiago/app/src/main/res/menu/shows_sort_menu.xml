@@ -5,30 +5,30 @@
     <item
         android:id="@+id/popular"
         android:enabled="true"
-        android:title="Popular"
+        android:title="@string/popular"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/top_rated"
         android:enabled="true"
-        android:title="Top Rated"
+        android:title="@string/top_rated"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/on_the_air"
         android:enabled="true"
-        android:title="On The Air"
+        android:title="@string/on_the_air"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/airing_today"
         android:enabled="true"
-        android:title="Airing Today"
+        android:title="@string/airing_today"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/show_latest"
         android:enabled="true"
-        android:title="Latest"
+        android:title="@string/latest"
         app:showAsAction="never"/>
 </menu>

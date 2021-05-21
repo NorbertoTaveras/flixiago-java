@@ -62,9 +62,9 @@ public class ShowSeasonEpisodesAdapter
             extends RecyclerView.ViewHolder
             implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         ShowSeasonEpisode episode;
-        TextView titleView;
-        TextView descriptionView;
-        CheckBox watchedView;
+        final TextView titleView;
+        final TextView descriptionView;
+        final CheckBox watchedView;
 
         ViewHolder(View view) {
             super(view);

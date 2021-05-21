@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -31,7 +30,6 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
-import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -52,7 +50,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -89,17 +86,14 @@ public class FormHelpers {
         entries.toArray(entryArray);
 
         // Sort them by genre text
-        Arrays.sort(entryArray, new Comparator<Object>() {
-            @Override
-            public int compare(Object p1, Object p2) {
-                Pair<Long, String> o1 = (Pair<Long, String>) p1;
-                Pair<Long, String> o2 = (Pair<Long, String>) p2;
-                if (o1.first == -1)
-                    return -1;
-                if (o2.first == -1)
-                    return 1;
-                return o1.second.compareTo(o2.second);
-            }
+        Arrays.sort(entryArray, (p1, p2) -> {
+            Pair<Long, String> o1 = (Pair<Long, String>) p1;
+            Pair<Long, String> o2 = (Pair<Long, String>) p2;
+            if (o1.first == -1)
+                return -1;
+            if (o2.first == -1)
+                return 1;
+            return o1.second.compareTo(o2.second);
         });
 
         entries.clear();
@@ -122,18 +116,15 @@ public class FormHelpers {
                 new FormHelpers.DynamicMenu(menuButton, highlightIndex, genres);
 
         // Show the menu and handle clicks
-        genreMenu.show(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                // Figure out which entry they clicked
-                int index = genreMenu.indexOf(item);
+        genreMenu.show(item -> {
+            // Figure out which entry they clicked
+            int index = genreMenu.indexOf(item);
 
-                long selectedGenreId = entries.get(index).first;
+            long selectedGenreId = entries.get(index).first;
 
-                listener.genreIdSelected(selectedGenreId);
+            listener.genreIdSelected(selectedGenreId);
 
-                return true;
-            }
+            return true;
         });
     }
 
@@ -232,18 +223,8 @@ public class FormHelpers {
                                @StringRes int message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(message);
-        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                listener.onConfirmResult(true);
-            }
-        });
-        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                listener.onConfirmResult(false);
-            }
-        });
+        builder.setPositiveButton(android.R.string.yes, (dialog, which) -> listener.onConfirmResult(true));
+        builder.setNegativeButton(android.R.string.cancel, (dialog, which) -> listener.onConfirmResult(false));
         builder.show();
     }
 
@@ -263,12 +244,7 @@ public class FormHelpers {
         int i = 0;
         for (int choice : choices)
             buttons[i++] = resources.getString(choice);
-        builder.setItems(buttons, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                listener.choice(choices[which]);
-            }
-        });
+        builder.setItems(buttons, (dialog, which) -> listener.choice(choices[which]));
         builder.show();
     }
 
@@ -292,12 +268,7 @@ public class FormHelpers {
             ImageView imageView = view.findViewById(R.id.image);
             TextView captionView = view.findViewById(R.id.caption);
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onClick(item);
-                }
-            });
+            view.setOnClickListener(v -> listener.onClick(item));
 
             String thumbnailUrl = item.getThumbnailUrl();
             String thumbnailCaption = item.getThumbnailCaption();
@@ -397,8 +368,8 @@ public class FormHelpers {
     }
 
     public static class DynamicMenu {
-        PopupMenu popupMenu;
-        List<MenuItem> items;
+        final PopupMenu popupMenu;
+        final List<MenuItem> items;
 
         public DynamicMenu(View view, int highlightIndex, String... options) {
             Context context = view.getContext();
@@ -433,7 +404,7 @@ public class FormHelpers {
 
     public static class AsyncCount {
         public int completed;
-        public int pending;
+        public final int pending;
 
         public AsyncCount(int pending) {
             this.pending = pending;
@@ -445,8 +416,8 @@ public class FormHelpers {
     }
 
     public static class StoragePermissionHelper {
-        Activity activity;
-        int requestCode;
+        final Activity activity;
+        final int requestCode;
         PermissionCallback callback;
 
         public StoragePermissionHelper(Activity activity, int requestCode) {
@@ -483,15 +454,10 @@ public class FormHelpers {
                 if (permissions[i].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                     // it is the external storage permission, access the corresponding
                     // entry of grantResult to see if the user allowed it
-                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
-                        // the user granted permission
-                        assert callback != null;
-                        callback.onResult(true);
-                    } else {
-                        // the user denied permission to access external storage
-                        assert callback != null;
-                        callback.onResult(false);
-                    }
+                    //assert callback != null;
+                    // the user granted permission
+                    // the user denied permission to access external storage
+                    callback.onResult(grantResults[i] == PackageManager.PERMISSION_GRANTED);
                     callback = null;
                     break;
                 }
@@ -528,26 +494,23 @@ public class FormHelpers {
         public void show(OnImagePicked callback) {
             this.callback = callback;
 
-            FormHelpers.multipleChoice(new FormHelpers.MultipleChoiceListener() {
-                                           @Override
-                                           public void choice(int which) {
-                                               switch (which) {
-                                                   case R.string.library:
-                                                       getImageFromLibrary();
-                                                       break;
+            FormHelpers.multipleChoice(which -> {
+                switch (which) {
+                    case R.string.library:
+                        getImageFromLibrary();
+                        break;
 
-                                                   case R.string.camera:
-                                                       storagePermissionHelper.withStoragePermission(new PermissionCallback() {
-                                                           @Override
-                                                           public void onResult(boolean havePermission) {
-                                                               if (havePermission)
-                                                                   getImageFromCamera();
-                                                           }
-                                                       });
-                                                       break;
-                                               }
-                                           }
-                                       }, activity, true, R.string.image_source,
+                    case R.string.camera:
+                        storagePermissionHelper.withStoragePermission(new PermissionCallback() {
+                            @Override
+                            public void onResult(boolean havePermission) {
+                                if (havePermission)
+                                    getImageFromCamera();
+                            }
+                        });
+                        break;
+                }
+            }, activity, true, R.string.image_source,
                     R.string.library, R.string.camera);
         }
 

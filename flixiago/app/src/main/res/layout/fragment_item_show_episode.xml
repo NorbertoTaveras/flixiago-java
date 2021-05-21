@@ -27,7 +27,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Episode Name"
+                android:text="@string/episode_name"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
@@ -41,7 +41,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Episode # - Episode Date"
+                android:text="@string/episode_episode_date"
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp" />
 

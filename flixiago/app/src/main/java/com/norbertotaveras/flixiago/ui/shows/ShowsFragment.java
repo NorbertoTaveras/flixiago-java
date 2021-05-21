@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 
 import android.util.LongSparseArray;
@@ -82,7 +81,7 @@ public class ShowsFragment
     private long currentGenreId = -1;
     private int currentCertificationLimit = Integer.MAX_VALUE;
 
-    private LongSparseArray<Integer> certificationCache = new LongSparseArray<>();
+    private final LongSparseArray<Integer> certificationCache = new LongSparseArray<>();
 
     private boolean closing = false;
 
@@ -117,8 +116,7 @@ public class ShowsFragment
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_shows, container, false);
-        return root;
+        return inflater.inflate(R.layout.fragment_shows, container, false);
     }
 
     @Override
@@ -169,7 +167,7 @@ public class ShowsFragment
             @Override
             public void onSuccess(HashMap<Long, String> showGenreLookup) {
                 showsAdapter = new ShowsAdapter(
-                        new ArrayList<Show>(), showGenreLookup,
+                        new ArrayList<>(), showGenreLookup,
                         certificationCache, certificationLookup, showClickCallback);
                 showList.setAdapter(showsAdapter);
 
@@ -308,15 +306,12 @@ public class ShowsFragment
         movieDBApi.getShowGenreList(new OnGetShowGenreLookupCallback() {
             @Override
             public void onSuccess(HashMap<Long, String> movieGenreList) {
-                FormHelpers.showGenreMenu(new FormHelpers.OnDynamicMenuItemSelected() {
-                    @Override
-                    public void genreIdSelected(long genreId) {
-                        // Set the current genre id to the item they cicked
-                        currentGenreId = genreId;
+                FormHelpers.showGenreMenu(genreId -> {
+                    // Set the current genre id to the item they cicked
+                    currentGenreId = genreId;
 
-                        // Reload the list
-                        resetShowList(currentQuery);
-                    }
+                    // Reload the list
+                    resetShowList(currentQuery);
                 }, menuButton, movieGenreList, currentGenreId);
             }
 
@@ -328,8 +323,8 @@ public class ShowsFragment
     }
 
     static class CertificationPair {
-        String certification;
-        int order;
+        final String certification;
+        final int order;
 
         public CertificationPair(String certification, Integer order) {
             this.certification = certification;
@@ -379,14 +374,11 @@ public class ShowsFragment
         final FormHelpers.DynamicMenu certificationMenu = new FormHelpers.DynamicMenu(
                 menuButton, highightIndex, optionTexts);
 
-        certificationMenu.show(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                int index = certificationMenu.indexOf(item);
-                currentCertificationLimit = optionOrders[index];
-                resetShowList(currentQuery);
-                return true;
-            }
+        certificationMenu.show(item -> {
+            int index = certificationMenu.indexOf(item);
+            currentCertificationLimit = optionOrders[index];
+            resetShowList(currentQuery);
+            return true;
         });
     }
 
@@ -536,11 +528,6 @@ public class ShowsFragment
         return getShowsCallback;
     }
 
-    OnShowClickCallback showClickCallback = new OnShowClickCallback() {
-        @Override
-        public void onClick(Show show) {
-            ShowActivity.show(getActivity(), show);
-        }
-    };
+    final OnShowClickCallback showClickCallback = show -> ShowActivity.show(getActivity(), show);
 
 }

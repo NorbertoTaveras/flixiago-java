@@ -14,14 +14,14 @@ import java.util.HashMap;
 public abstract class Media implements Openable {
     private static final String BACKDROP_BASE_URL = TmdbUrls.IMAGE_BASE_URL_780px;
 
-    protected long id;
-    protected String backdrop_path;
+    protected final long id;
+    protected final String backdrop_path;
     protected ArrayList<Long> genre_ids;
     protected ArrayList<Genre> genres;
-    protected String overview;
+    protected final String overview;
     protected String popularity;
-    protected String poster_path;
-    protected float vote_average;
+    protected final String poster_path;
+    protected final float vote_average;
 
     public abstract String getReleaseDate();
     public abstract String getTitle();

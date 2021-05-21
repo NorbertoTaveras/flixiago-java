@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.norbertotaveras.flixiago.R;
-import com.norbertotaveras.flixiago.ui.alternateicons.AlternateIconsFragment;
 
 public class AlternateIconsActivity extends AppCompatActivity {
 

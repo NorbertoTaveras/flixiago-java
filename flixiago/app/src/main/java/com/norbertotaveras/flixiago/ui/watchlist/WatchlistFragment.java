@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
 import androidx.annotation.NonNull;
@@ -23,14 +21,11 @@ import com.google.android.material.tabs.TabLayout;
 import com.norbertotaveras.flixiago.R;
 import com.norbertotaveras.flixiago.activities.ShowSeasonActivity;
 import com.norbertotaveras.flixiago.adapters.MediaAdapter;
-import com.norbertotaveras.flixiago.helpers.FormHelpers;
-import com.norbertotaveras.flixiago.models.base.Media;
 import com.norbertotaveras.flixiago.models.movie.Movie;
 import com.norbertotaveras.flixiago.models.show.Show;
 import com.norbertotaveras.flixiago.database.room.FlixiagoDatabase;
 import com.norbertotaveras.flixiago.database.room.entities.MovieEntity;
 import com.norbertotaveras.flixiago.database.room.entities.ShowEntity;
-import com.norbertotaveras.flixiago.models.show.ShowSeasonSummary;
 
 import java.util.ArrayList;
 import java.util.List;

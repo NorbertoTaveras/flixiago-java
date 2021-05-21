@@ -22,17 +22,17 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All"/>
+            android:text="@string/all_tab"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Movies" />
+            android:text="@string/movies_tab" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TV Shows" />
+            android:text="@string/tv_shows_tab" />
 
     </com.google.android.material.tabs.TabLayout>
 

@@ -17,7 +17,6 @@ import java.util.HashMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,9 +34,7 @@ import com.norbertotaveras.flixiago.R;
 import com.norbertotaveras.flixiago.activities.MovieCreditActivity;
 import com.norbertotaveras.flixiago.helpers.FormHelpers;
 import com.norbertotaveras.flixiago.helpers.TmdbUrls;
-import com.norbertotaveras.flixiago.models.base.Dates;
 import com.norbertotaveras.flixiago.models.movie.Movie;
-import com.norbertotaveras.flixiago.models.movie.MovieCredit;
 import com.norbertotaveras.flixiago.models.movie.MovieCreditsResponse;
 import com.norbertotaveras.flixiago.models.movie.MovieReview;
 import com.norbertotaveras.flixiago.models.movie.MovieTrailer;
@@ -319,12 +316,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
         final Context context = fragment.getContext();
 
         final FormHelpers.ThumbnailClickListener clickListener;
-        clickListener = new FormHelpers.ThumbnailClickListener<Movie>() {
-            @Override
-            public void onClick(Movie movie) {
-                movie.open(context);
-            }
-        };
+        clickListener = (FormHelpers.ThumbnailClickListener<Movie>) movie -> movie.open(context);
 
         return new OnGetMoviesCallback() {
             @Override
@@ -368,34 +360,28 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                     readMore.setVisibility(View.VISIBLE);
                     readLess.setVisibility(View.GONE);
 
-                    readMore.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            savedPoint.y = nestedScrollView.getScrollY();
-                            content.setMaxLines(Integer.MAX_VALUE);
-                            readMore.setVisibility(View.GONE);
-                            readLess.setVisibility(View.VISIBLE);
-                            view.requestLayout();
-                        }
+                    readMore.setOnClickListener(v -> {
+                        savedPoint.y = nestedScrollView.getScrollY();
+                        content.setMaxLines(Integer.MAX_VALUE);
+                        readMore.setVisibility(View.GONE);
+                        readLess.setVisibility(View.VISIBLE);
+                        view.requestLayout();
                     });
 
-                    readLess.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                    readLess.setOnClickListener(v -> {
 
-                            content.setMaxLines(limitedLines);
-                            readMore.setVisibility(View.VISIBLE);
-                            readLess.setVisibility(View.GONE);
-                            view.requestLayout();
+                        content.setMaxLines(limitedLines);
+                        readMore.setVisibility(View.VISIBLE);
+                        readLess.setVisibility(View.GONE);
+                        view.requestLayout();
 
-                            nestedScrollView.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    int top = savedPoint.y;
-                                    nestedScrollView.scrollTo(0, top);
-                                }
-                            });
-                        }
+                        nestedScrollView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                int top1 = savedPoint.y;
+                                nestedScrollView.scrollTo(0, top1);
+                            }
+                        });
                     });
                 } else {
                     readMore.setVisibility(View.GONE);
@@ -455,17 +441,14 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                 FormHelpers.populateScrollingImageList(fragment, credits,
                         creditsResponse.getCast(), true,
                         R.layout.fragment_credit_image, true,
-                        new FormHelpers.ThumbnailClickListener<MovieCredit>() {
-                            @Override
-                            public void onClick(MovieCredit item) {
-                                Activity activity = getActivity();
-                                if (activity == null) {
-                                    Log.e(TAG, "No activity!");
-                                    return;
-                                }
-
-                                MovieCreditActivity.run(activity, item);
+                        item -> {
+                            Activity activity = getActivity();
+                            if (activity == null) {
+                                Log.e(TAG, "No activity!");
+                                return;
                             }
+
+                            MovieCreditActivity.run(activity, item);
                         });
             }
 
@@ -486,12 +469,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                 FormHelpers.populateScrollingImageList(fragment,
                         trailers, movieTrailers, false,
                         R.layout.fragment_image,
-                        false, new FormHelpers.ThumbnailClickListener<MovieTrailer>() {
-                            @Override
-                            public void onClick(MovieTrailer item) {
-                                showMovieTrailer(String.format(VIDEO_BASE_URL, item.getKey()));
-                            }
-                        });
+                        false, item -> showMovieTrailer(String.format(VIDEO_BASE_URL, item.getKey())));
             }
 
             @Override

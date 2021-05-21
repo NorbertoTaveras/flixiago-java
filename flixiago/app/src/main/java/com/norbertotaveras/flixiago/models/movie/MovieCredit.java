@@ -7,13 +7,13 @@ import com.norbertotaveras.flixiago.helpers.InternetImage;
 import com.norbertotaveras.flixiago.helpers.TmdbUrls;
 
 public class MovieCredit implements InternetImage, Parcelable {
-    private long id;
-    private long cast_id;
-    private String credit_id;
-    private String character;
-    private String name;
-    private int order;
-    private String profile_path;
+    private final long id;
+    private final long cast_id;
+    private final String credit_id;
+    private final String character;
+    private final String name;
+    private final int order;
+    private final String profile_path;
 
     public static final Creator<MovieCredit> CREATOR
             = new Creator<MovieCredit>() {

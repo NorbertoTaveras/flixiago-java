@@ -18,7 +18,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="@string/media_poster"/>
 
         <!--<ImageButton
             android:id="@+id/favorite"
@@ -42,6 +43,7 @@
             app:tint="@color/flixiago_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:src="@drawable/ic_round_favorite_24"/>
+            android:src="@drawable/ic_round_favorite_24"
+            android:contentDescription="@string/favorite_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

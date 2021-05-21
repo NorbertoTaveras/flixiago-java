@@ -19,7 +19,7 @@ public class GenreList {
     }
 
     public HashMap<Long, String> genreNameLookupTable() {
-        HashMap<Long, String> lookupTable = new HashMap<Long, String>(genres.size());
+        HashMap<Long, String> lookupTable = new HashMap<>(genres.size());
         for (Genre genre: genres) {
             lookupTable.put(genre.getId(), genre.getName());
         }

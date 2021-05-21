@@ -20,7 +20,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:alpha="0.75"/>
+            android:alpha="0.75"
+            android:contentDescription="@string/backdrop" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/poster_card"
@@ -37,7 +38,8 @@
                 android:id="@+id/poster"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/poster" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -67,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Fantastic Beasts And Where To Find Them"
+                android:text="@string/show_title_ex"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -78,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:fontFamily="@font/roboto_medium"
-                android:text="October 6, 2019"
+                android:text="@string/show_date_ex"
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp" />
 
@@ -89,7 +91,7 @@
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp"
                 android:layout_marginTop="2dp"
-                android:text="# seasons • # Episodes"
+                android:text="@string/seasons_episodes_ex"
                 android:fontFamily="@font/roboto_medium"/>
 
             <TextView
@@ -99,7 +101,7 @@
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp"
                 android:layout_marginTop="2dp"
-                android:text="Action, Adventure, Sci-fi, Fantasy, Mystery, Crime"
+                android:text="@string/show_genres_ex"
                 android:fontFamily="@font/roboto_medium"/>
         </LinearLayout>
 
@@ -127,7 +129,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
-                android:text="Overview"
+                android:text="@string/overview"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="18sp" />
 
@@ -139,7 +141,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:fontFamily="@font/roboto"
-                android:text="Overview Content"
+                android:text="@string/overview_content"
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="14sp"/>
 
@@ -151,7 +153,7 @@
                 android:layout_marginStart="32dp"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
-                android:text="Cast"
+                android:text="@string/cast"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/movie_overview_header"
@@ -181,7 +183,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
-                android:text="Trailers"
+                android:text="@string/trailers"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/movie_cast_header"
@@ -211,7 +213,7 @@
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Similar Shows"/>
+                android:text="@string/similar_shows"/>
 
             <HorizontalScrollView
                 android:id="@+id/similar_scrollview"
@@ -235,7 +237,7 @@
                 android:layout_marginStart="32dp"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
-                android:text="Reviews"
+                android:text="@string/reviews"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="18sp" />
 
@@ -261,7 +263,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
                 android:backgroundTint="#805ec1"
-                android:text="Add To Watch List"
+                android:text="@string/add_to_watch_list"
                 android:textColor="@color/white"
                 android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="parent"

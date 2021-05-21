@@ -6,7 +6,7 @@
         android:id="@+id/search"
         android:enabled="true"
         android:icon="@drawable/ic_round_search_24"
-        android:title="Search"
+        android:title="@string/search_title"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
@@ -21,14 +21,14 @@
         android:id="@+id/genre_filter"
         android:enabled="true"
         android:icon="@drawable/ic_round_filter_list_24"
-        android:title="Genre"
+        android:title="@string/genre_title"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/certification_filter"
         android:enabled="true"
         android:icon="@drawable/ic_round_shield_24"
-        android:title="Certification"
+        android:title="@string/certification_title"
         app:showAsAction="ifRoom"/>
 
 </menu>

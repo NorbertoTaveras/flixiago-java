@@ -26,14 +26,14 @@
         android:id="@+id/read_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read more"
+        android:text="@string/read_more"
         android:textColor="?attr/colorTextHighlight"/>
 
     <TextView
         android:id="@+id/read_less"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read less"
+        android:text="@string/read_less"
         android:textColor="?attr/colorTextHighlight"/>
 
 </LinearLayout>

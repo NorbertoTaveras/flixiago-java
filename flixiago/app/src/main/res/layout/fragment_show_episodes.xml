@@ -20,7 +20,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:alpha="0.75"/>
+            android:alpha="0.75"
+            android:contentDescription="@string/backdrop" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/poster_card"
@@ -37,7 +38,8 @@
                 android:id="@+id/poster"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/poster" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -67,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Fantastic Beasts And Where To Find Them"
+                android:text="@string/show_title_ex"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -79,7 +81,7 @@
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp"
                 android:layout_marginTop="2dp"
-                android:text="October 6, 2019"
+                android:text="@string/show_date_ex"
                 android:fontFamily="@font/roboto_medium"/>
 
             <TextView
@@ -89,7 +91,7 @@
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp"
                 android:layout_marginTop="2dp"
-                android:text="# seasons x # episodes"
+                android:text="@string/seasons_x_episodes"
                 android:fontFamily="@font/roboto_medium"/>
 
             <TextView
@@ -99,7 +101,7 @@
                 android:textColor="?attr/colorContentTextOnPrimary"
                 android:textSize="12sp"
                 android:layout_marginTop="2dp"
-                android:text="Action, Adventure, Sci-fi, Fantasy, Mystery, Crime"
+                android:text="@string/show_genres_ex"
                 android:fontFamily="@font/roboto_medium"/>
         </LinearLayout>
 
@@ -118,7 +120,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto"
                 android:textStyle="bold"
-                android:text="Season #"
+                android:text="@string/season_number"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="18sp" />
 

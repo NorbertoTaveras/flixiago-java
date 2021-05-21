@@ -11,7 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.PopupMenu;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +19,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,7 +27,6 @@ import com.norbertotaveras.flixiago.R;
 import com.norbertotaveras.flixiago.activities.MovieActivity;
 import com.norbertotaveras.flixiago.adapters.MoviesAdapter;
 import com.norbertotaveras.flixiago.database.room.FlixiagoDatabase;
-import com.norbertotaveras.flixiago.database.room.FlixiagoDatabaseHelper;
 import com.norbertotaveras.flixiago.helpers.FormHelpers;
 import com.norbertotaveras.flixiago.models.movie.Movie;
 import com.norbertotaveras.flixiago.models.movie.MovieCertification;
@@ -77,7 +74,7 @@ public class MoviesFragment
     private long currentGenreId = -1;
     private int currentCertificationLimit = Integer.MAX_VALUE;
 
-    private LongSparseArray<Integer> certificationCache = new LongSparseArray<>();
+    private final LongSparseArray<Integer> certificationCache = new LongSparseArray<>();
 
     public interface ActivityInterface {
 
@@ -109,11 +106,8 @@ public class MoviesFragment
                 new ViewModelProvider(this).get(MoviesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_movies, container, false);
         //final TextView textView = root.findViewById(R.id.text_home);
-        moviesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
+        moviesViewModel.getText().observe(getViewLifecycleOwner(), s -> {
+            //textView.setText(s);
         });
         return root;
     }
@@ -188,7 +182,7 @@ public class MoviesFragment
             @Override
             public void onSuccess(HashMap<Long, String> movieGenreLookup) {
                 movieAdapter = new MoviesAdapter(
-                        new ArrayList<Movie>(), movieGenreLookup,
+                        new ArrayList<>(), movieGenreLookup,
                         certificationCache, certificationLookup, movieClickCallback, movieToggleCallback);
                 movieList.setAdapter(movieAdapter);
 
@@ -223,8 +217,8 @@ public class MoviesFragment
     }
 
     static class CertificationPair {
-        String certification;
-        int order;
+        final String certification;
+        final int order;
 
         public CertificationPair(String certification, Integer order) {
             this.certification = certification;
@@ -247,15 +241,12 @@ public class MoviesFragment
         movieDBApi.getMovieGenreList(new OnGetMovieGenreLookupCallback() {
             @Override
             public void onSuccess(HashMap<Long, String> movieGenreList) {
-                FormHelpers.showGenreMenu(new FormHelpers.OnDynamicMenuItemSelected() {
-                    @Override
-                    public void genreIdSelected(long genreId) {
-                        // Set the current genre id to the item they cicked
-                        currentGenreId = genreId;
+                FormHelpers.showGenreMenu(genreId -> {
+                    // Set the current genre id to the item they clicked
+                    currentGenreId = genreId;
 
-                        // Reload the list
-                        resetMovieList(currentQuery);
-                    }
+                    // Reload the list
+                    resetMovieList(currentQuery);
                 }, menuButton, movieGenreList, currentGenreId);
             }
 
@@ -308,14 +299,11 @@ public class MoviesFragment
         final FormHelpers.DynamicMenu certificationMenu = new FormHelpers.DynamicMenu(
                 menuButton, highlightIndex, optionTexts);
 
-        certificationMenu.show(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                int index = certificationMenu.indexOf(item);
-                currentCertificationLimit = optionOrders[index];
-                resetMovieList(currentQuery);
-                return true;
-            }
+        certificationMenu.show(item -> {
+            int index = certificationMenu.indexOf(item);
+            currentCertificationLimit = optionOrders[index];
+            resetMovieList(currentQuery);
+            return true;
         });
     }
 
@@ -491,7 +479,7 @@ public class MoviesFragment
         return false;
     }
 
-    OnMovieClickCallback movieClickCallback = new OnMovieClickCallback() {
+    final OnMovieClickCallback movieClickCallback = new OnMovieClickCallback() {
         @Override
         public void onClick(Movie movie) {
             MovieActivity.show(getActivity(), movie);
@@ -503,9 +491,6 @@ public class MoviesFragment
         }
     };
 
-    OnMovieToggleCallback movieToggleCallback = new OnMovieToggleCallback() {
-        @Override
-        public void onToggle(Movie movie) {
-        }
+    final OnMovieToggleCallback movieToggleCallback = movie -> {
     };
 }

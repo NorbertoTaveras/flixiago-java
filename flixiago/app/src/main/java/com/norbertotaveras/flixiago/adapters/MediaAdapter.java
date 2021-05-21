@@ -1,10 +1,9 @@
 package com.norbertotaveras.flixiago.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -35,8 +34,8 @@ public class MediaAdapter
 
     // containers for movies, shows, all
     private ArrayList<Movie> movieWatchList = new ArrayList<>();
-    private ArrayList<Show> showWatchList = new ArrayList<>();
-    private ArrayList<Media> watchList = new ArrayList<>();
+    private final ArrayList<Show> showWatchList = new ArrayList<>();
+    private final ArrayList<Media> watchList = new ArrayList<>();
 
     // media adapter constructor
     // takes in an array list of movies and shows
@@ -130,6 +129,7 @@ public class MediaAdapter
 
         // on click handles opening any type of media object (show or movie)
         // based on the item view's context
+        @SuppressLint("NonConstantResourceId")
         @Override
         public void onClick(View v) {
             int id = v.getId();

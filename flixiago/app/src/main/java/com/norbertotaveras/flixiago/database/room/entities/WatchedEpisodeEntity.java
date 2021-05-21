@@ -78,7 +78,7 @@ public class WatchedEpisodeEntity {
     }
 
     public HashMap<String, Object> asHashMap(final String uid) {
-        HashMap<String, Object> result = new HashMap<String, Object>(5) {{
+        return new HashMap<String, Object>(5) {{
             put("uid", uid);
             put("showId", showId);
             put("episodeId", episodeId);
@@ -86,7 +86,6 @@ public class WatchedEpisodeEntity {
             put("watched", watched);
             put("unix_ms", unix_ms);
         }};
-        return result;
     }
 
     public void setUnixMs(long unixMs) {

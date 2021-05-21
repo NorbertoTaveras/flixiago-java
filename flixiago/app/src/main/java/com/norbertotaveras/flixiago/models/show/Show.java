@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class Show extends Media implements Parcelable, InternetImage {
 
-    private String name;
+    private final String name;
 
-    private String first_air_date;
+    private final String first_air_date;
     private int number_of_episodes;
     private int number_of_seasons;
 

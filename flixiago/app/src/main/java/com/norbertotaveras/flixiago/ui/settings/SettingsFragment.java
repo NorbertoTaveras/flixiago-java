@@ -1,9 +1,7 @@
 package com.norbertotaveras.flixiago.ui.settings;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.card.MaterialCardView;
 import com.norbertotaveras.flixiago.R;
-import com.norbertotaveras.flixiago.activities.AlternateIconsActivity;
 import com.norbertotaveras.flixiago.helpers.FormHelpers;
-
-import java.text.Normalizer;
 
 public class SettingsFragment
         extends

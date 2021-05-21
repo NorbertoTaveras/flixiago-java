@@ -39,8 +39,8 @@ public class ShowSeasonsAdapter
     private final long showId;
     private final ArrayList<ShowSeasonSummary> showSeasons;
     private final OnSeasonSummarySelected listener;
-    private HashMap<Long, Integer> watchCountCache = new HashMap<>();
-    FlixiagoDatabase database;
+    private final HashMap<Long, Integer> watchCountCache = new HashMap<>();
+    final FlixiagoDatabase database;
 
     public ShowSeasonsAdapter(Context context,
                               long showId, ArrayList<ShowSeasonSummary> showSeasons,

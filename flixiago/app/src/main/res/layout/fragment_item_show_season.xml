@@ -27,7 +27,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Season #"
+                android:text="@string/season_number"
                 android:textColor="?attr/colorTitleTextOnPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
@@ -79,7 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="N/N"/>
+            android:text="@string/n_n"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -24,11 +24,12 @@
                 android:id="@+id/feature_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_round_share_24"
+                android:src="@drawable/ic_round_auto_fix_high_24"
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/feature_icon" />
 
             <TextView
                 android:id="@+id/feature_text"
@@ -37,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/feature_icon"
-                android:text="Feature request"/>
+                android:text="@string/feature_request"/>
 
             <ImageView
                 android:id="@+id/feature_arrow_icon"
@@ -46,7 +47,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/ic_round_arrow_forward_ios_24"/>
+                android:src="@drawable/ic_round_arrow_forward_ios_24"
+                android:contentDescription="@string/feature_arrow_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -69,11 +71,12 @@
                 android:id="@+id/report_bug_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_round_share_24"
+                android:src="@drawable/ic_round_bug_report_24"
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/report_bug_icon" />
 
             <TextView
                 android:id="@+id/report_bug_text"
@@ -82,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/report_bug_icon"
-                android:text="Report a bug"/>
+                android:text="@string/report_a_bug"/>
 
             <ImageView
                 android:id="@+id/report_arrow_icon"
@@ -91,7 +94,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/ic_round_arrow_forward_ios_24"/>
+                android:src="@drawable/ic_round_arrow_forward_ios_24"
+                android:contentDescription="@string/report_arrow_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -118,7 +122,8 @@
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/app_version_icon" />
 
             <TextView
                 android:id="@+id/app_version_text"
@@ -127,7 +132,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/app_version_icon"
-                android:text="App Version"/>
+                android:text="@string/app_version"/>
 
             <TextView
                 android:id="@+id/app_version_value_text"
@@ -136,8 +141,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginRight="4dp"
-                android:text="1.0.0"
+                android:layout_marginEnd="4dp"
+                android:text="@string/version_value"
                 android:textStyle="bold"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -164,7 +169,8 @@
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/creator_icon" />
 
             <TextView
                 android:id="@+id/creator_text"
@@ -173,7 +179,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/creator_icon"
-                android:text="Creator"/>
+                android:text="@string/creator"/>
 
             <ImageView
                 android:id="@+id/creator_arrow_icon"
@@ -182,7 +188,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:src="@drawable/ic_round_arrow_forward_ios_24"/>
+                android:src="@drawable/ic_round_arrow_forward_ios_24"
+                android:contentDescription="@string/creator_arrow_icon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

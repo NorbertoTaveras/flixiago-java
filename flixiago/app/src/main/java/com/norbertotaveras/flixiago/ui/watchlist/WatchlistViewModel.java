@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 public class WatchlistViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
     public WatchlistViewModel() {
         mText = new MutableLiveData<>();

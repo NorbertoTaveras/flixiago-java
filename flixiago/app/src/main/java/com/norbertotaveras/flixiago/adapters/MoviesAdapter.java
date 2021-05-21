@@ -1,12 +1,9 @@
 package com.norbertotaveras.flixiago.adapters;
 
-import android.content.Context;
 import android.util.LongSparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -89,24 +86,21 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
         final MoviesAdapter self = this;
 
-        final Completion completionHandler = new Completion() {
-            @Override
-            public void complete() {
-                if (++state.completed == state.pending) {
-                    int index = 0;
-                    for (Movie movie: movies) {
-                        int certification = certifications[index];
+        final Completion completionHandler = () -> {
+            if (++state.completed == state.pending) {
+                int index = 0;
+                for (Movie movie: movies) {
+                    int certification = certifications[index];
 
-                        if ((currentGenreId < 0 || movie.isGenre(currentGenreId)) &&
-                                (certification > 0 || certificationLimit ==
-                                        (certificationCache.size() - 1)) &&
-                                certification <= certificationLimit) {
-                            self.movies.add(movie);
-                        }
-                        ++index;
+                    if ((currentGenreId < 0 || movie.isGenre(currentGenreId)) &&
+                            (certification > 0 || certificationLimit ==
+                                    (certificationCache.size() - 1)) &&
+                            certification <= certificationLimit) {
+                        self.movies.add(movie);
                     }
-                    notifyDataSetChanged();
+                    ++index;
                 }
+                notifyDataSetChanged();
             }
         };
 
@@ -196,19 +190,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             ratingCircle = view.findViewById(R.id.rating_circle);
             favorite = view.findViewById(R.id.favorite);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onMovieClickCallback.onClick(movie);
-                }
-            });
+            itemView.setOnClickListener(v -> onMovieClickCallback.onClick(movie));
 
-            favorite.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    FlixiagoDatabase database = FlixiagoDatabase.getInstance(view.getContext());
-                    FlixiagoDatabaseHelper.toggleWatch(database, favorite, movie);
-                }
+            favorite.setOnClickListener(v -> {
+                FlixiagoDatabase database = FlixiagoDatabase.getInstance(view.getContext());
+                FlixiagoDatabaseHelper.toggleWatch(database, favorite, movie);
             });
 
         }

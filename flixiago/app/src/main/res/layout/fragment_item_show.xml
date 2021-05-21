@@ -19,7 +19,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/show_poster" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -143,7 +144,8 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginStart="8dp"
                     android:src="@drawable/ic_round_favorite_24"
-                    app:tint="@color/flixiago_primary" />
+                    app:tint="@color/flixiago_primary"
+                    android:contentDescription="@string/show_favorite" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

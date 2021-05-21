@@ -82,26 +82,23 @@ public class ShowsAdapter extends RecyclerView.Adapter<ShowsAdapter.ShowViewHold
 
         final ShowsAdapter self = this;
 
-        final Completion completionHandler = new Completion() {
-            @Override
-            public void complete() {
-                if (++state.completed < state.pending)
-                    return;
+        final Completion completionHandler = () -> {
+            if (++state.completed < state.pending)
+                return;
 
-                int index = 0;
-                for (Show show: shows) {
-                    int certification = certifications[index];
+            int index = 0;
+            for (Show show: shows) {
+                int certification = certifications[index];
 
-                    if ((currentGenreId < 0 || show.isGenre(currentGenreId)) &&
-                            (certification > 0 ||
-                                    certificationLimit == certificationCache.size() - 1) &&
-                            certification <= certificationLimit) {
-                        self.shows.add(show);
-                    }
-                    ++index;
+                if ((currentGenreId < 0 || show.isGenre(currentGenreId)) &&
+                        (certification > 0 ||
+                                certificationLimit == certificationCache.size() - 1) &&
+                        certification <= certificationLimit) {
+                    self.shows.add(show);
                 }
-                notifyDataSetChanged();
+                ++index;
             }
+            notifyDataSetChanged();
         };
 
         for (final Show show: shows) {
@@ -191,19 +188,11 @@ public class ShowsAdapter extends RecyclerView.Adapter<ShowsAdapter.ShowViewHold
             ratingCircle = view.findViewById(R.id.rating_circle);
             favorite = view.findViewById(R.id.favorite);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onShowClickCallback.onClick(show);
-                }
-            });
+            itemView.setOnClickListener(v -> onShowClickCallback.onClick(show));
 
-            favorite.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    FlixiagoDatabase database = FlixiagoDatabase.getInstance(view.getContext());
-                    FlixiagoDatabaseHelper.toggleWatch(database, favorite, show);
-                }
+            favorite.setOnClickListener(v -> {
+                FlixiagoDatabase database = FlixiagoDatabase.getInstance(view.getContext());
+                FlixiagoDatabaseHelper.toggleWatch(database, favorite, show);
             });
         }
 

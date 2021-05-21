@@ -28,7 +28,8 @@
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/todo" />
 
             <TextView
                 android:id="@+id/red_text"
@@ -36,8 +37,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/red_icon"
-                android:text="Red"/>
+                app:layout_constraintStart_toEndOf="@id/red_icon" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/red_check_box"
@@ -74,7 +74,8 @@
                 android:layout_marginStart="4dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="@string/todo" />
 
             <TextView
                 android:id="@+id/blue_text"
@@ -82,8 +83,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/blue_icon"
-                android:text="Blue"/>
+                app:layout_constraintStart_toEndOf="@id/blue_icon" />
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/blue_check_box"

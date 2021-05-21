@@ -31,7 +31,6 @@ import com.norbertotaveras.flixiago.database.room.entities.ShowEntity;
 import com.norbertotaveras.flixiago.helpers.FormHelpers;
 import com.norbertotaveras.flixiago.helpers.TmdbUrls;
 import com.norbertotaveras.flixiago.models.show.Show;
-import com.norbertotaveras.flixiago.models.show.ShowCredit;
 import com.norbertotaveras.flixiago.models.show.ShowCreditsResponse;
 import com.norbertotaveras.flixiago.models.show.ShowReview;
 import com.norbertotaveras.flixiago.models.show.ShowTrailer;
@@ -49,7 +48,7 @@ import java.util.HashMap;
 public class ShowFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "ShowFragment";
-    private static String VIDEO_BASE_URL = "http://www.youtube.com/watch?v=%s";
+    private static final String VIDEO_BASE_URL = "http://www.youtube.com/watch?v=%s";
 
     ShowActivityInterface showActivityInterface;
 
@@ -295,12 +294,7 @@ public class ShowFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onSuccess(int page, int totalPages, ArrayList<Show> shows) {
                 final FormHelpers.ThumbnailClickListener clickListener;
-                clickListener = new FormHelpers.ThumbnailClickListener<Show>() {
-                    @Override
-                    public void onClick(Show show) {
-                        show.open(context);
-                    }
-                };
+                clickListener = (FormHelpers.ThumbnailClickListener<Show>) show -> show.open(context);
 
                 FormHelpers.populateScrollingImageList(fragment, similarLayout, shows,
                         false, R.layout.fragment_card_image, true,
@@ -345,34 +339,28 @@ public class ShowFragment extends Fragment implements View.OnClickListener {
                     readMore.setVisibility(View.VISIBLE);
                     readLess.setVisibility(View.GONE);
 
-                    readMore.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            savedPoint.y = nestedScrollView.getScrollY();
-                            content.setMaxLines(Integer.MAX_VALUE);
-                            readMore.setVisibility(View.GONE);
-                            readLess.setVisibility(View.VISIBLE);
-                            view.requestLayout();
-                        }
+                    readMore.setOnClickListener(v -> {
+                        savedPoint.y = nestedScrollView.getScrollY();
+                        content.setMaxLines(Integer.MAX_VALUE);
+                        readMore.setVisibility(View.GONE);
+                        readLess.setVisibility(View.VISIBLE);
+                        view.requestLayout();
                     });
 
-                    readLess.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                    readLess.setOnClickListener(v -> {
 
-                            content.setMaxLines(limitedLines);
-                            readMore.setVisibility(View.VISIBLE);
-                            readLess.setVisibility(View.GONE);
-                            view.requestLayout();
+                        content.setMaxLines(limitedLines);
+                        readMore.setVisibility(View.VISIBLE);
+                        readLess.setVisibility(View.GONE);
+                        view.requestLayout();
 
-                            nestedScrollView.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    int top = savedPoint.y;
-                                    nestedScrollView.scrollTo(0, top);
-                                }
-                            });
-                        }
+                        nestedScrollView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                int top1 = savedPoint.y;
+                                nestedScrollView.scrollTo(0, top1);
+                            }
+                        });
                     });
                 } else {
                     readMore.setVisibility(View.GONE);
@@ -437,17 +425,14 @@ public class ShowFragment extends Fragment implements View.OnClickListener {
                 FormHelpers.populateScrollingImageList(fragment, credits,
                         creditsResponse.getCast(), true,
                         R.layout.fragment_credit_image, true,
-                        new FormHelpers.ThumbnailClickListener<ShowCredit>() {
-                            @Override
-                            public void onClick(ShowCredit item) {
-                                Activity activity = getActivity();
-                                if (activity == null) {
-                                    Log.e(TAG, "No activity!");
-                                    return;
-                                }
-
-                                ShowCreditActivity.run(activity, item);
+                        item -> {
+                            Activity activity = getActivity();
+                            if (activity == null) {
+                                Log.e(TAG, "No activity!");
+                                return;
                             }
+
+                            ShowCreditActivity.run(activity, item);
                         });
             }
 
@@ -468,12 +453,7 @@ public class ShowFragment extends Fragment implements View.OnClickListener {
                 FormHelpers.populateScrollingImageList(fragment,
                         trailers, showTrailers, false,
                         R.layout.fragment_image,
-                        false, new FormHelpers.ThumbnailClickListener<ShowTrailer>() {
-                            @Override
-                            public void onClick(ShowTrailer item) {
-                                showTVTrailer(String.format(VIDEO_BASE_URL, item.getKey()));
-                            }
-                        });
+                        false, item -> showTVTrailer(String.format(VIDEO_BASE_URL, item.getKey())));
             }
 
             @Override

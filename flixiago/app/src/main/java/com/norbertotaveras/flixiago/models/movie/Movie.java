@@ -14,8 +14,8 @@ import com.norbertotaveras.flixiago.services.movie.OnGetMovieCallback;
 
 public class Movie extends Media implements Parcelable, InternetImage {
 
-    private String release_date;
-    private String title;
+    private final String release_date;
+    private final String title;
     private int runtime;
 
     protected Movie(Parcel in) {

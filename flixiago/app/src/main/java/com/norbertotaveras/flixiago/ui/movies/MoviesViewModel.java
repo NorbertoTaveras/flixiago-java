@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 public class MoviesViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
     public MoviesViewModel() {
         mText = new MutableLiveData<>();
