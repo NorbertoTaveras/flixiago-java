@@ -1,7 +1,7 @@
 <h1 align="center">Flixiago</h1>
 
 <p align="center">
-    <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-21%2B-orange.svg?style=flat"/></a>
+    <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-23%2B-orange.svg?style=flat"/></a>
     <a href=""><img alt="Platform" src="https://img.shields.io/badge/platform-Android-green.svg?style=flat"/></a>
     <a href=""><img alt="Build-Status" src="https://shields.io/badge/build-passing-brightgreen?style=flat&logo=github"/></a>
     <a href="https://github.com/NorbertoTaveras"><img alt="Github-Profile" src="https://img.shields.io/badge/Github-NorbertoTaveras-blue?style=flat&logo=github"/></a>
@@ -15,7 +15,7 @@
 </br>
 
 <p align="center">
-    Flixiago Logo Goes here (TODO)
+    <img src ="https://github.com/NorbertoTaveras/flixiago-java/blob/main/assets/flixiago_logo.png" width="40%"/>
 </p>
 
 ## Download
@@ -42,6 +42,22 @@ The Movie Database API provides a RESTful API interface to highly detailed objec
 
 ## Demonstration
 
-### Videos
-
 ### Screenshots
+<p>
+    <img src="/assets/screenshot1.png" width="25%"/>
+    <img src="/assets/screenshot2.png" width="25%"/>
+    <img src="/assets/screenshot3.png" width="25%"/>
+</p>
+
+<p>
+    <img src="/assets/screenshot4.png" width="25%"/>
+    <img src="/assets/screenshot5.png" width="25%"/>
+    <img src="/assets/screenshot6.png" width="25%"/>
+</p>
+
+
+<p>
+    <img src="/assets/screenshot7.png" width="25%"/>
+    <img src="/assets/screenshot8.png" width="25%"/>
+    <img src="/assets/screenshot9.png" width="25%"/>
+</p>
